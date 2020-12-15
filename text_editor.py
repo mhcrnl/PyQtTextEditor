@@ -6,7 +6,7 @@ import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QTextEdit, QMainWindow, QMessageBox
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QIcon
-from PyQt5 import QtCore
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QAction
 
 class text_editor(QtWidgets.QMainWindow):
@@ -16,7 +16,7 @@ class text_editor(QtWidgets.QMainWindow):
         self.setWindowTitle("PyQtTextEditor")
         self.isMaximized()
         self.setFixedSize(850, 500)
-        self.setWindowIcon(QIcon("images/color.ico"))
+        self.setWindowIcon(QtGui.QIcon("PyQtTextEditor/images/home1.png"))
         self.show()
         # Adding QTextEdit widget -------------------------
         text = QTextEdit(self)
@@ -32,7 +32,7 @@ class text_editor(QtWidgets.QMainWindow):
         open.triggered.connect(self.Open)
         # File menu Save ---------------------------------------------
         save = QAction(QIcon("images/color.ico"), "Save", self)
-        save.setStatusTip("Salveaza un document.")
+        save.setToolTip("<h2>Salveaza un document.</h2>")
         save.triggered.connect(self.Save)
         # File menu Exit ---------------------------------------------
         exit = QAction(QIcon("images/color.ico"), "Exit", self)
